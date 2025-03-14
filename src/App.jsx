@@ -17,7 +17,8 @@ function App() {
   async function fetchResponse() {
     setLoading(true);
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    console.log("Using model:", model); // Log the model details
 
     try {
       const result = await model.generateContent(prompt);
